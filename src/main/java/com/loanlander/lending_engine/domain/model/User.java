@@ -14,8 +14,7 @@ import javax.persistence.Id;
 @Entity
 public final class User {
     @Id
-    @GeneratedValue
-    private long id ;
+    private String  username ;
     private  String firstname ;
     private  String lastname ;
     private  int age ;
