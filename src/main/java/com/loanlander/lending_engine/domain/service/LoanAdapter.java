@@ -15,12 +15,12 @@ public class LoanAdapter {
     public LoanAdapter(final UserRepository userRepository){
         this.userRepository = userRepository;
     }
-    public LoanApplication transform(LoanRequest request){
-        Optional<User> optionalUser = userRepository.findById(request.getBorrower_id());
+    public LoanApplication transform(LoanRequest request , User borrower){
+        Optional<User> optionalUser = userRepository.findById(borrower.getUsername());
         if(optionalUser.isPresent()){
             return new LoanApplication(request.getAmount(),optionalUser.get(),request.getDaysTorepay(),request.getInterestRate());
         }else {
-            throw new UserNotFoundExeption(request.getBorrower_id());
+            throw new UserNotFoundExeption(borrower.getUsername());
 
         }
 

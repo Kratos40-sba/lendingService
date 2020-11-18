@@ -11,7 +11,6 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class LoanRequest {
     private  int amount ;
-    private String borrower_id ;
     private int daysTorepay ;
     private  double interestRate ;
 }

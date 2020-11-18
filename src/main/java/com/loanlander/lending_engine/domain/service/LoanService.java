@@ -25,7 +25,7 @@ public class LoanService {
         this.loanRipository = loanRipository;
         this.userRepository = userRepository;
     }
-    public void acceptLoan (Long lender_id , Long loanApplication_id){
+    public void acceptLoan (String lender_id , Long loanApplication_id){
         User lender = userRepository.findById(lender_id).orElseThrow(()-> new UserNotFoundExeption(lender_id));
         LoanApplication loanApplication = loanApplicationRepository.findById(loanApplication_id).orElseThrow(()-> new LoanApplicationNotFoundException(loanApplication_id));
         loanRipository.save(new Loan(lender,loanApplication));
