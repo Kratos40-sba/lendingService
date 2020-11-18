@@ -17,7 +17,7 @@ public class TokenValidationService {
     private final RestTemplate restTemplate = new RestTemplate();
 
     @Autowired
-    public TokenValidationService(UserRepository userRepository,@Value("${security.baseurl}") String securityContextBaseUrl) {
+    public TokenValidationService(UserRepository userRepository,@Value("${securyti.baseurl}") String securityContextBaseUrl) {
         this.userRepository = userRepository;
         this.securityContextBaseUrl = securityContextBaseUrl;
     }
